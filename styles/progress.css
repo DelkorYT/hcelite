@@ -1,0 +1,63 @@
+.container {
+display: flex;
+width: 100%;
+max-width: 1300px;
+margin: auto;
+margin-top: 100px;
+
+}
+
+.card {
+    background: white;
+    color: #000000;
+    width: 300px;
+    margin: 10px;
+    padding-bottom: 15px;
+    display: block;
+
+}
+
+.card h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.card p {
+    text-align: center;
+}
+
+.card-image {
+  
+    height: 300px;
+    margin-bottom: 15px;
+    background-size: cover;
+
+}
+
+.card-mc {
+    background-image: url("../assets/images/ragnaros.webp");
+}
+
+.card-ony {
+    background-image: url("../assets/images/onyxia.webp");
+}
+
+.card-bwl {
+    background-image: url("../assets/images/nefarian.webp");
+}
+
+.card-zg {
+    background-image: url("../assets/images/hakkar.webp");
+}
+
+.card-aq20 {
+    background-image: url("../assets/images/ossirian.webp");
+}
+
+.card-aq40 {
+    background-image: url("../assets/images/c\'thun.webp");
+}
+
+.card-naxx {
+    background-image: url("../assets/images/kel\'thuzad.webp");
+}

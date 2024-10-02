@@ -1,0 +1,48 @@
+h2 {
+    font-size: 2rem;
+}
+
+form {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+form input {
+    border: none;
+    background-color:  rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 12rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#inputStr{
+    border-radius: 10px 10px 0 0;
+}
+
+#inputSpi {
+    border-radius: 0 0 10px 10px;
+}
+
+#formBtn {
+    margin-top: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#formBtn:hover {
+    color: #3CE13F;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.results {
+    font-size: 1.5rem;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5rem;
+}
