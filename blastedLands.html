@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blasted Lands Calculator</title>
+    <link rel="stylesheet" href="styles/global.css" type="text/css">
+    <link rel="stylesheet" href="styles/blastedLands.css" type="text/css">
+    <meta name="description" content="Blasted Lands Materials Calculator - Classic World of Warcraft">
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div>
+        <div id="main">
+            <header>
+                <nav class="navbar">
+                    <div class="logo"><a href="index.html"><img src="assets/icons/love-skull.svg"
+                                alt="Logo and link to Homepage"></a></div>
+                    <ul class="links">
+                        <li><a href="progress.html"
+                                alt="Current state of Progression of HC Elite through Molten Core, Onyxia's Lair, Blackwing Lair, Zul'Gurub, Ruins of Ahn'Qiraj (AQ20), Temple of Ahn'Qiraj (AQ40) and Naxxramas">Progress</a>
+                        </li>
+                        <li><a target="_blank"
+                                href="https://calendar.google.com/calendar/u/1?cid=ZGVsa29yeXRAZ21haWwuY29t"
+                                alt="Google Calendar which shows the reset days for Zul'Gurub, Ruins of Ahn'Qiraji and Onyxia's Lair">Resets</a>
+                        </li>
+                        <li><a target="_blank" href="https://www.twitch.tv/team/hcelite"
+                                alt="Twitch Team of HC Elite Streamers">Streams</a></li>
+                        <li><a target="_blank" href="https://discord.gg/hcelite"
+                                alt="Invite Link to the public HC Elite Discord Server">Discord</a></li>
+
+                    </ul>
+                    <div class="toggle_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                        </svg>
+                    </div>
+                </nav>
+                <div class="dropdown_menu">
+                    <ul>
+                        <li><a href="progress.html"
+                                alt="Current state of Progression of HC Elite through Molten Core, Onyxia's Lair, Blackwing Lair, Zul'Gurub, Ruins of Ahn'Qiraj (AQ20), Temple of Ahn'Qiraj (AQ40) and Naxxramas">Progress</a>
+                        </li>
+
+                        <li><a target="_blank"
+                                href="https://calendar.google.com/calendar/u/1?cid=ZGVsa29yeXRAZ21haWwuY29t"
+                                alt="Google Calendar which shows the reset days for Zul'Gurub, Ruins of Ahn'Qiraji and Onyxia's Lair">Resets</a>
+                        </li>
+                        <li><a target="_blank" href="https://www.twitch.tv/team/hcelite"
+                                alt="Twitch Team of HC Elite Streamers">Streams</a></li>
+                        <li><a target="_blank" href="https://discord.gg/hcelite"
+                                alt="Invite Link to the public HC Elite Discord Server">Discord</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section class="form">
+                
+                <form>
+                    <h2>Amounts</h2>
+                        <input type="number" name="strength" id="inputStr" placeholder="Strength">
+                    
+
+                        <input type="number" name="agility" id="inputAgi" placeholder="Agility">
+                    
+
+
+                        <input type="number" name="stamina" id="inputSta" placeholder="Stamina">
+
+
+
+                        <input type="number" name="intelligence" id="inputInt" placeholder="Intelligence">
+
+
+
+                        <input type="number" name="spirit" id="inputSpi" placeholder="Spirit">
+
+                    <input id="formBtn" type="button" value="Calculate" onclick="outputInputs();changeDisplay();">
+                </form>
+            </section>
+
+            <section id="resultsMaterials" class="results">
+                <h2>Materials</h2>
+                <div>
+                    Lungs:
+                    <span id="resultsLungs"></span>
+                </div>
+
+                <div>
+                    Pincers:
+                    <span id="resultsPincers"></span>
+                </div>
+
+                <div>
+                    Brains:
+                    <span id="resultsBrains"></span>
+                </div>
+
+                <div>
+                    Gizzards:
+                    <span id="resultsGizzards"></span>
+                </div>
+
+                <div>
+                    Jowls:
+                    <span id="resultsJowls"></span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer id="footer">
+        
+    </footer>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn svg')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+        }
+        
+        function changeDisplay() {
+            document.querySelector('.results').style.display='flex'
+        }
+
+
+
+        function outputInputs() {
+
+            var inputValueStr = document.getElementById("inputStr");
+            var inputValueAgi = document.getElementById("inputAgi");
+            var inputValueSta = document.getElementById("inputSta");
+            var inputValueInt = document.getElementById("inputInt");
+            var inputValueSpi = document.getElementById("inputSpi");
+
+            /*lungs,pincers,brains,gizzards,jowls*/
+            let amountWanted = [0, 0, 0, 0, 0];
+
+
+            amountWanted[0] = parseInt(inputValueStr.value) || 0;
+            amountWanted[1] = parseInt(inputValueAgi.value) || 0;
+            amountWanted[2] = parseInt(inputValueSta.value) || 0;
+            amountWanted[3] = parseInt(inputValueInt.value) || 0;
+            amountWanted[4] = parseInt(inputValueSpi.value) || 0;
+
+            /*lungs,pincers,brains,gizzards,jowls*/
+            let results = [0, 0, 0, 0, 0];
+
+            const materialCost = [/*lungs,pincers,brains,gizzards,jowls*/
+     /* for str */[2, 1, 0, 0, 3],
+     /* for agi */[1, 3, 0, 2, 0],
+     /* for sta */[3, 2, 1, 0, 0],
+     /* for int */[0, 0, 10, 2, 0],
+     /* for spi */[0, 0, 0, 10, 2]]
+
+            for (j = 0; j < amountWanted.length; j++) {
+
+                for (i = 0; i < materialCost.length; i++) {
+                    results[j] += amountWanted[i] * materialCost[i][j];
+                }
+            }
+
+            document.getElementById("resultsLungs").innerHTML = results[0];
+            document.getElementById("resultsPincers").innerHTML = results[1];
+            document.getElementById("resultsBrains").innerHTML = results[2];
+            document.getElementById("resultsGizzards").innerHTML = results[3];
+            document.getElementById("resultsJowls").innerHTML = results[4];
+
+        }
+
+    </script>
+
+</body>
+
+</html>

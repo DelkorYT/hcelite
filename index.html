@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/global.css" type="text/css">
+    <link rel="stylesheet" href="styles/index.css" type="text/css">
+    <meta name="description" content="Homepage of HC Elite - World of Warcraft Hardcore Raiding Guild">
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div>
+        <div id="main">
+            <header>
+                <nav class="navbar">
+                    <div class="logo"><a href="index.html"><img src="assets/icons/love-skull.svg"
+                                alt="Logo and link to Homepage"></a></div>
+                    <ul class="links">
+                        <li><a href="progress.html" alt="Current state of Progression of HC Elite through Molten Core, Onyxia's Lair, Blackwing Lair, Zul'Gurub, Ruins of Ahn'Qiraj (AQ20), Temple of Ahn'Qiraj (AQ40) and Naxxramas">Progress</a></li>
+                        <li><a target="_blank"
+                                href="https://calendar.google.com/calendar/u/1?cid=ZGVsa29yeXRAZ21haWwuY29t"
+                                alt="Google Calendar which shows the reset days for Zul'Gurub, Ruins of Ahn'Qiraji and Onyxia's Lair">Resets</a>
+                        </li>
+                        <li><a target="_blank" href="https://www.twitch.tv/team/hcelite"
+                                alt="Twitch Team of HC Elite Streamers">Streams</a></li>
+                        <li><a target="_blank" href="https://discord.gg/hcelite"
+                                alt="Invite Link to the public HC Elite Discord Server">Discord</a></li>
+                        <li><a href="blastedLands.html">Blasted Lands</a></li>
+
+                    </ul>
+                    <div class="toggle_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                        </svg>
+                    </div>
+                </nav>
+                <div class="dropdown_menu">
+                    <ul>
+                        <li><a href="progress.html" alt="Current state of Progression of HC Elite through Molten Core, Onyxia's Lair, Blackwing Lair, Zul'Gurub, Ruins of Ahn'Qiraj (AQ20), Temple of Ahn'Qiraj (AQ40) and Naxxramas">Progress</a></li>
+
+                        <li><a target="_blank"
+                                href="https://calendar.google.com/calendar/u/1?cid=ZGVsa29yeXRAZ21haWwuY29t"
+                                alt="Google Calendar which shows the reset days for Zul'Gurub, Ruins of Ahn'Qiraji and Onyxia's Lair">Resets</a>
+                        </li>
+                        <li><a target="_blank" href="https://www.twitch.tv/team/hcelite"
+                                alt="Twitch Team of HC Elite Streamers">Streams</a></li>
+                        <li><a target="_blank" href="https://discord.gg/hcelite"
+                                alt="Invite Link to the public HC Elite Discord Server">Discord</a></li>
+                                <li><a href="blastedLands.html">Blasted Lands</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section id="hero">
+                <h1>&lt;HC ELITE&gt;</h1>
+                <h2>Hardcore WoW Raiding Guild <br>
+                    on Defias Pillager (NA)
+                </h2>
+            </section>
+        </div>
+    </div>
+    <footer id="footer">
+    </footer>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn svg')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+        }
+    </script>
+
+</body>
+
+</html>
